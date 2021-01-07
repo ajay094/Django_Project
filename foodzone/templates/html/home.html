@@ -1,0 +1,25 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+{% block content %}
+
+<div class="container mt-4 mx-2">
+  <div class="row">
+    {% for k in products %}
+    <div class="col-md mx-1 col-sm">
+      <div class="card-title">
+        <h2 class="bg-info text-white border rounded p-2 mx-2">{{k.productname}}</h2>
+        <div class="card-body text-center">
+          <img src="{{k.product_image.url}}"style="width: 400px; height: 240px; border-radius: 20px;"/>
+          <h5 class="card-title">{{k.productname}}</h5>
+          <h5 class="card-subtitle">{{k.description}}</h5>
+          <h5 class="card-text">₹{{k.price}}(per.pak)</h5>
+        </div>
+        <a href="#" class="btn  btn-danger btn-block col-md col-sm">ORDER NOW</a><br>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- height="" width=""-->
+ {% endblock %}
